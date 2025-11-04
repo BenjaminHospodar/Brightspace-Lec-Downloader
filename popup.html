@@ -5,156 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carleton Lecture Downloader</title>
 
-    <!-- Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <style>
-      :root {
-        --carleton-red: #b5121b;
-        --carleton-dark: #1e1e1e;
-        --carleton-gray: #f5f5f5;
-      }
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-      body {
-        font-family: "Inter", system-ui, sans-serif;
-        background: var(--carleton-gray);
-        width: 340px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .card {
-        background: #fff;
-        border: none;
-        border-radius: 14px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        margin: 16px;
-        padding: 20px;
-      }
-
-      .header {
-        background: var(--carleton-red);
-        color: white;
-        border-radius: 14px 14px 0 0;
-        text-align: center;
-        padding: 18px 10px;
-      }
-
-      .header h1 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin: 0;
-      }
-
-      .header p {
-        font-size: 0.85rem;
-        margin: 4px 0 0 0;
-        color: #f0f0f0;
-      }
-
-      .btn-primary {
-        background-color: var(--carleton-red);
-        border: none;
-      }
-
-      .btn-primary:hover {
-        background-color: #8f0f16;
-      }
-
-      .output-container {
-        background: #fdfdfd;
-        border-radius: 10px;
-        padding: 12px;
-        margin-top: 10px;
-        max-height: 230px;
-        overflow-y: auto;
-        font-size: 0.9rem;
-      }
-
-      .btn-download {
-        width: 100%;
-        margin-top: 6px;
-        font-size: 0.85rem;
-        position: relative;
-      }
-
-      .spinner-border {
-        width: 1rem;
-        height: 1rem;
-        border-width: 0.15em;
-        margin-right: 6px;
-      }
-
-      .github-link {
-        display: block;
-        text-decoration: none;
-        text-align: center;
-        background-color: var(--carleton-dark);
-        color: white;
-        padding: 8px;
-        border-radius: 8px;
-        margin-top: 12px;
-        font-size: 0.85rem;
-        transition: background 0.2s;
-      }
-
-      .github-link:hover {
-        background-color: #333;
-      }
-
-      footer {
-        font-size: 0.75rem;
-        text-align: center;
-        color: #666;
-        margin-top: 8px;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css" />
   </head>
 
   <body>
-    <div class="header">
-      <h1>Carleton Lecture Downloader</h1>
-    </div>
+    <header class="app-header">
+      <div class="header-content">
+        <img src="128.png" alt="App Logo" class="app-logo" />
+        <h1 class="header-title mb-3">Carleton Lecture Downloader</h1>
+      </div>
+      <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-link active"
+            id="auto-tab"
+            data-target="auto-pane"
+            type="button"
+            role="tab"
+            aria-controls="auto-pane"
+            aria-selected="true"
+          >
+            <i class="bi bi-magic"></i> Auto
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-link"
+            id="manual-tab"
+            data-target="manual-pane"
+            type="button"
+            role="tab"
+            aria-controls="manual-pane"
+            aria-selected="false"
+          >
+            <i class="bi bi-wrench"></i> Manual
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-link"
+            id="instructions-tab"
+            data-target="instructions-pane"
+            type="button"
+            role="tab"
+            aria-controls="instructions-pane"
+            aria-selected="false"
+          >
+            <i class="bi bi-info-circle"></i> Info
+          </button>
+        </li>
+      </ul>
+    </header>
 
-    <div class="card">
-      <label for="jsonInput" class="form-label fw-semibold mb-1"
-        >Paste JSON Data:</label
-      >
-      <textarea
-        id="jsonInput"
-        class="form-control mb-3"
-        placeholder="Paste Brightspace JSON here..."
-        rows="4"
-      ></textarea>
+    <main class="app-card">
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="auto-pane"
+          role="tabpanel"
+          aria-labelledby="auto-tab"
+          tabindex="0"
+        >
+          <p class="small text-muted-notion mb-3">
+            <strong>Auto Mode</strong> attempts to immediately paste the
+            clipboard content and generate links.
+          </p>
+          <div class="d-grid gap-2">
+            <button id="autoProcessBtn" class="btn btn-primary-notion">
+              <i class="bi bi-cloud-download-fill me-1"></i>
+              Auto Download
+            </button>
+          </div>
+        </div>
 
-      <button id="processBtn" class="btn btn-primary w-100 mb-3">
-        Generate Download Links
-      </button>
+        <div
+          class="tab-pane fade"
+          id="manual-pane"
+          role="tabpanel"
+          aria-labelledby="manual-tab"
+          tabindex="0"
+        >
+          <label
+            for="jsonInput"
+            class="form-label fw-bold mb-2 small text-muted-notion"
+          >
+            Paste Debug Info
+          </label>
+          <textarea
+            id="jsonInput"
+            class="form-control form-control-notion mb-3"
+            placeholder="Paste JSON data here (from 'Copy debug info')..."
+            rows="5"
+          ></textarea>
 
-      <div id="output" class="output-container small text-secondary">
-        <strong>Instructions:</strong>
-        <ul class="mb-1">
-          <li>Right click on Lecture</li>
-          <li>Click copy debug info</li>
-          <li>Paste in JSON data</li>
-          <li>Generate download links</li>
-          <li>Click download button and save</li>
-        </ul>
+          <div class="d-grid gap-2">
+            <button id="processBtn" class="btn btn-primary-notion">
+              <i class="bi bi-box-arrow-down-fill me-1"></i>
+              Generate Download Links
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade instructions-tab"
+          id="instructions-pane"
+          role="tabpanel"
+          aria-labelledby="instructions-tab"
+          tabindex="0"
+        >
+          <div class="instructions-content">
+            <p class="fw-bold text-light-notion">Instructions:</p>
+            <ol class="mb-3 ps-3 small text-light-notion">
+              <li>Navigate to the page with the video you want to download.</li>
+              <li>
+                Right-click on the video player and select
+                <strong>Copy debug info.</strong>
+              </li>
+              <li>
+                Open this extension and click
+                <strong>Paste & Generate</strong> in Auto Mode.
+              </li>
+              <li>
+                Download the video at your desired quality from the output box.
+              </li>
+            </ol>
+
+            <p class="fw-bold text-light-notion">
+              For more info check out the Github!
+            </p>
+
+            <a
+              class="github-link"
+              href="https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader"
+              target="_blank"
+            >
+              <i class="bi bi-github me-1"></i>
+              View Project on GitHub
+            </a>
+          </div>
+        </div>
       </div>
 
-      <a
-        class="github-link"
-        href="https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader"
-        target="_blank"
-      >
-        View Project on GitHub
-      </a>
-    </div>
+      <div id="output" class="output-container">
+        <p id="errorMessage" class="text-danger fw-bold mt-2 d-none">
+          Error: Could not process data. Please check the JSON in Manual Mode.
+        </p>
+      </div>
+    </main>
 
-    <footer>Project by Benjamin Hospodar</footer>
+    <footer class="text-muted-notion">
+      &copy; 2025 Benjamin Hospodar • v1.0.0
+    </footer>
 
     <script src="popup.js"></script>
   </body>
