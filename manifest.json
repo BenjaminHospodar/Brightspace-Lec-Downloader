@@ -1,19 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Brightspace Lecture Downloader",
-  "version": "2.0",
+  "version": "1.0.0",
   "description": "Downloads Lectures on brightspace",
 
-  "permissions": [],
+  "permissions": ["clipboardRead"],
 
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "128": "icon128.png"
+      "128": "128.png"
     }
   },
 
   "icons": {
-    "128": "icon128.png"
+    "128": "128.png"
   }
 }
