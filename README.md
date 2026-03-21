@@ -15,7 +15,9 @@
 
 ## Overview
 
-Carleton Lecture Downloader lets you save Brightspace and Mediaspace lecture recordings directly to your computer. Copy the video's debug info, click the extension, and download — no sign-in, no tracking, no data collection.
+Carleton Lecture Downloader lets you save Brightspace and Mediaspace lecture recordings directly to your computer. Copy the video's debug info, click the extension, and download. No sign-in, no tracking, no data collection.
+
+NOTE: This project is an independent initiative and is not affiliated with Carleton University.
 
 ## Features
 
@@ -23,7 +25,7 @@ Carleton Lecture Downloader lets you save Brightspace and Mediaspace lecture rec
 | ----------------------- | -------------------------------------------------------------------------------------------------- |
 | **Auto Download**       | Automatically pulls debug info from your clipboard to initiate a high-quality download.            |
 | **Manual Mode**         | Use this as a backup if Auto Mode fails, manually paste your link or data to trigger the download. |
-| **Fast & Lightweight**  | Minimal footprint — no background processes or heavy dependencies.                                 |
+| **Fast & Lightweight**  | Minimal footprint, no background processes or heavy dependencies.                                 |
 | **No Sign-in Required** | Works out of the box with zero account or registration steps.                                      |
 | **Privacy First**       | No user data is collected, stored, or transmitted.                                                 |
 
@@ -53,13 +55,13 @@ Carleton Lecture Downloader lets you save Brightspace and Mediaspace lecture rec
 1. Navigate to a Brightspace or Mediaspace page with the lecture video.
 2. Right-click the video player and select **"Copy debug info"**.
 
-   ![Copy Debug Info](docs/gifs/copy-debug-info.png)
+   ![Copy Debug Info](docs/img/copy-debug-info.png)
 
 3. Click the extension icon in your toolbar.
 4. Click **"Auto Download"**.
 5. The video downloads automatically.
 
-   ![Auto Download](docs/gifs/auto-download.png)
+   ![Auto Download](docs/img/auto-download.png)
 
 ### Manual Download (Choose Quality)
 
@@ -68,7 +70,7 @@ Carleton Lecture Downloader lets you save Brightspace and Mediaspace lecture rec
 3. Paste the debug info into the text box.
 4. Click **"Download"**.
 
-   ![Manual Paste](docs/gifs/manual-paste.png)
+   ![Manual Paste](docs/img/manual-paste.png)
 
 ## Project Structure
 
