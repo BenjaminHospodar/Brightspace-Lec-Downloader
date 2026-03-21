@@ -10,8 +10,7 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: var(--notion-bg);
   width: 360px;
   margin: 0;
@@ -81,7 +80,9 @@ body {
   border-radius: 4px;
   font-weight: 600;
   padding: 8px 12px;
-  transition: color 0.2s, background-color 0.2s;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
   font-size: 0.9rem;
   background-color: transparent;
   margin: 0 4px;
@@ -120,7 +121,9 @@ body {
   background-color: var(--carleton-dark-red);
   border: none;
   font-weight: 600;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
   color: white;
   border-radius: 6px;
 }
@@ -136,6 +139,7 @@ body {
   border: 1px solid var(--notion-border);
   border-radius: 6px;
   padding: 10px;
+  font-family: inherit;
 }
 .form-control-notion::placeholder {
   color: var(--notion-text-subtle);
@@ -159,7 +163,9 @@ body {
   font-size: 0.95rem;
   color: var(--notion-text);
   font-weight: 600;
-  transition: background-color 220ms ease, border-color 220ms ease,
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
     box-shadow 220ms ease;
 }
 
@@ -222,7 +228,9 @@ body {
   margin-top: 15px;
   font-size: 0.85rem;
   font-weight: 500;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   border: 1px solid var(--notion-border);
 }
 

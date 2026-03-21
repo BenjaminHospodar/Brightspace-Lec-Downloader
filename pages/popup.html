@@ -1,27 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carleton Lecture Downloader</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../static/css/popup-styles.css" />
   </head>
 
@@ -84,8 +69,8 @@
           tabindex="0"
         >
           <p class="small text-muted-notion mb-3">
-            Automatically downloads the lecture with the highest quality based
-            on debug info in clipboard.
+            Automatically downloads the lecture with the debug info in your
+            clipboard.
           </p>
           <div class="d-grid gap-2">
             <button id="autoProcessBtn" class="btn btn-primary-notion">
@@ -117,8 +102,8 @@
 
           <div class="d-grid gap-2">
             <button id="processBtn" class="btn btn-primary-notion">
-              <i class="bi bi-box-arrow-down-fill me-1"></i>
-              Generate Download Links
+              <i class="bi bi-download me-1"></i>
+              Download
             </button>
           </div>
         </div>
@@ -140,10 +125,10 @@
               </li>
               <li>
                 Open this extension and click
-                <strong>Paste & Generate</strong> in Auto Mode.
+                <strong>Download</strong>.
               </li>
               <li>
-                Download the video at your desired quality from the output box.
+                A success banner should apear and the download popup will show.
               </li>
             </ol>
 
@@ -171,9 +156,9 @@
     </main>
 
     <footer class="text-muted-notion">
-      &copy; 2025 Benjamin Hospodar • v1.0.0
+      &copy; 2026 Benjamin Hospodar • v1.1.0
     </footer>
 
-    <script src="../static/js/popup-controller.js"></script>
+    <script type="module" src="../src/popup/index.js"></script>
   </body>
 </html>
