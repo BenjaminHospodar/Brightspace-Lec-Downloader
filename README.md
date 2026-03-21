@@ -28,7 +28,7 @@ You can install this Chrome extension via the official **Chrome Web Store** or b
 The easiest and most secure way to install.
 
 1.  Click the link below:
-    - **[Link to Chrome Web Store]**
+    - **[[Link to Chrome Web Store](https://chromewebstore.google.com/detail/iokaghgiknoaonaimicjdjgjmcmpjeno?utm_source=item-share-cb)]**
 2.  Click **"Add to Chrome."**
 
 ### Option 2: Manual Installation (Load Unpacked)
