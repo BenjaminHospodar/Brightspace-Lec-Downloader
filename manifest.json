@@ -1,21 +1,21 @@
 {
   "manifest_version": 3,
   "name": "Carleton Lecture Downloader",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Downloads Lectures on Brightspace and Mediaspace",
 
-  "permissions": ["clipboardRead"],
+  "permissions": ["clipboardRead", "storage", "downloads"],
 
   "host_permissions": ["https://cdnapisec.kaltura.com/*"],
 
   "action": {
-    "default_popup": "pages/popup.html",
+    "default_popup": "index.html",
     "default_icon": {
-      "128": "static/img/128.png"
+      "128": "icons/128.png"
     }
   },
 
   "icons": {
-    "128": "static/img/128.png"
+    "128": "icons/128.png"
   }
 }

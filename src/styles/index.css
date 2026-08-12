@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-page: #fafafa;
+    --color-surface: #f0f0f0;
+    --color-elevated: #ffffff;
+    --color-border: #e0e0e0;
+    --color-text: #2b2b2b;
+    --color-text-muted: #6b6b6b;
+    --color-text-subtle: #949494;
+    --color-input: #ffffff;
+    --color-segment: #ebebeb;
+    --glass-red-bg: rgba(233, 28, 36, 0.1);
+    --glass-red-border: rgba(233, 28, 36, 0.25);
+    --glass-red-shadow: rgba(233, 28, 36, 0.15);
+    --glass-segment-bg: rgba(0, 0, 0, 0.04);
+    --glass-segment-border: rgba(0, 0, 0, 0.06);
+    --glass-tab-bg: var(--color-elevated);
+    --glass-tab-border: rgba(233, 28, 36, 0.35);
+
+    --status-loading-bg: #f5f5f5;
+    --status-loading-text: #525252;
+    --status-processing-bg: #eff6ff;
+    --status-processing-border: #bfdbfe;
+    --status-processing-text: #1d4ed8;
+    --status-error-bg: #fef2f2;
+    --status-error-border: #fecaca;
+    --status-error-text: #991b1b;
+    --status-success-bg: #f0fdf4;
+    --status-success-border: #bbf7d0;
+    --status-success-text: #166534;
+    --status-success-icon: #16a34a;
+  }
+
+  .dark {
+    --color-page: #1e1e1e;
+    --color-surface: #252526;
+    --color-elevated: #2d2d2d;
+    --color-border: #3c3c3c;
+    --color-text: #cccccc;
+    --color-text-muted: #858585;
+    --color-text-subtle: #6e6e6e;
+    --color-input: #252526;
+    --color-segment: #2d2d2d;
+    --glass-red-bg: rgba(233, 28, 36, 0.18);
+    --glass-red-border: rgba(233, 28, 36, 0.35);
+    --glass-red-shadow: rgba(233, 28, 36, 0.25);
+    --glass-segment-bg: rgba(255, 255, 255, 0.04);
+    --glass-segment-border: rgba(255, 255, 255, 0.06);
+    --glass-tab-bg: var(--color-elevated);
+    --glass-tab-border: rgba(233, 28, 36, 0.45);
+
+    --status-loading-bg: #8080801a;
+    --status-loading-text: #b0b0b0;
+    --status-processing-bg: #0ea5e91a;
+    --status-processing-border: #0ea5e940;
+    --status-processing-text: #38bdf8;
+    --status-error-bg: #e91c241a;
+    --status-error-border: #e91c2440;
+    --status-error-text: #f0a0a4;
+    --status-success-bg: #4caf501a;
+    --status-success-border: #4caf5040;
+    --status-success-text: #8bc98f;
+    --status-success-icon: #6fcf73;
+  }
+
+  html {
+    font-family:
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif;
+    @apply m-0 w-[320px] bg-theme-page;
+  }
+
+  body {
+    @apply m-0 w-[320px] overflow-x-hidden overflow-y-auto bg-theme-page font-sans text-theme-text antialiased;
+  }
+
+  #root {
+    @apply w-full bg-theme-page;
+  }
+}
+
+@layer components {
+  .glass-red {
+    background: var(--glass-red-bg);
+    border: 1px solid var(--glass-red-border);
+    box-shadow:
+      0 2px 8px var(--glass-red-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-segment {
+    background: var(--glass-segment-bg);
+    border: 1px solid var(--glass-segment-border);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .glass-tab-indicator {
+    background: var(--glass-tab-bg);
+    box-shadow: inset 0 0 0 1px var(--glass-tab-border);
+  }
+}
